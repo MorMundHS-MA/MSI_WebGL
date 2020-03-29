@@ -1,0 +1,7 @@
+version: "2"
+services:
+  latexmk:
+    build: .
+    volumes: 
+      - ./tex/:/sources/
+    command: "latexmk -pvc -outdir=out/ -pdf seminararbeit.tex"
