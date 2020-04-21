@@ -1,5 +1,5 @@
 % Hie muss normalerweise nichts angepasst werden
-\usepackage[pdftex]{graphicx}
+\usepackage{graphicx}
 \graphicspath{{img/}}
 \DeclareGraphicsExtensions{.pdf,.jpeg,.jpg,.png}
 \usepackage[cmex10]{amsmath}
@@ -11,6 +11,10 @@
 \usepackage{listings}             % Source Code listings
 \usepackage[printonlyused]{acronym}
 \usepackage{fancyvrb}
+\usepackage[no-math]{fontspec}
+
+% Font für Unicode zeichen
+\newfontfamily\DejaSans{DejaVu Sans}
 
 % Farben definieren
 \definecolor{linkblue}{RGB}{0, 0, 100}
@@ -37,8 +41,7 @@
       colorlinks=false,
       linkcolor=darkblue,
       citecolor=darkblue,
-      urlcolor=darkblue,
-      pdftex
+      urlcolor=darkblue
    ]{hyperref}
 %	 \PrerenderUnicode{ü}
 
@@ -75,6 +78,14 @@
 \newcommand{\zb}[0]{z.\,B.\ }
 \newcommand{\dahe}[0]{d.\,h.\ }
 \newcommand{\ua}[0]{u.\,a.\ }
+\newcommand{\bzw}[0]{b.\,z.\,w.\ }
+
+% Emojis und andere Unicode Sonderzeichen
+\newcommand{\checkmark}[0]{\DejaSans ✔}
+\newcommand{\cross}[0]{\DejaSans ✖}
 
 % Wo liegt Sourcecode?
 \newcommand{\srcloc}{src/}
+
+% Zentrierte Tabellen
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}

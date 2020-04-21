@@ -1,4 +1,23 @@
 \section{WebGL}
+\subsection{Funktionsweise}
+WebGL basiert auf der OpenGL ES (Embedded Systems) API \cite{parisi2012webgl} einer reduzierten Version der OpenGL API \cite{KhronosGLES}. Reduziert bezieht sich in diesem Falle jedoch primär auf das Entfernen von Abwärtskompatibilität (\zb fixed-function pipeline) sowie das Wegfallen von Funktionen die softwareseitig durch einfachere Funktionen ersetzt werden (\zb Kein direktes rendering von Quads) \cite{DiffGLES}. Daher können selbst state-of-the-art Engines wie die Unreal Engine mit geringen Einschränkungen verwendet werden um WebGL Projekte zu realisieren \cite{UnrealHTML5}\cite{UnrealLimits}. \\
+Da es sich bei WebGL somit um eine low-level Grafikapi handelt, ist die Entwicklung von Anwendung direkt in WebGL sehr Zeitaufwendig und setzt fortgeschrittenes Know-how in Grafikprogrammierung voraus. Daher gibt es einige Frameworks und Game Engines die durch Abstraktionen die Entwicklung wesentlich erleichtern \cite{parisi2012webgl}. Eine exemplarische Übersicht über diese wird in den folgenden Kapiteln gezeigt. \\
+Für die Verwendung von WebGL in einer Website wird ein HTML5 canvas Element als Interface zwischen der \ac{DOM} und WebGL benötigt. Von diesem canvas Element kann dann ein WebGL Kontext erzeugt werden \cite{parisi2012webgl}. Dieser Kontext wird dann als Interface für alle folgenden WebGL Operationen verwendet. Konkret würde eine Anwendung 3D Modelle und Texturen laden \bzw erzeugen, diese in Puffer laden um diese dann mithilfe von Shaderprogrammen auf den Canvas Framebuffer zu rendern. 
 \subsection{Vorteile und Nachteile}
+Um die Vor- und Nachteile von WebGL zu erläutern werden wir WebGL mit den Webtechnologien Canvas2D, CSS 3D transform und SVG vergleichen. Durch die grundlegende, im vorrangehenden Kapitel beschriebene, Ähnlichkeit von WebGL und nativen Grafikapis wie OpenGL und DirectX werden diese nicht weiter verglichen.
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|P{2.5cm}|P{2.5cm}|P{2.5cm}|P{2.5cm}|P{2.5cm}|}
+        \hline
+        Eigenschaften & WebGL & Canvas2D & CSS 3D &  SVG \\ \hline
+        3D & \checkmark & \cross & \checkmark & \cross \\ \hline
+        inline HTML & \cross (Proposed) & \cross & \checkmark & \cross \\ \hline
+        CSS  & \cross & \cross & \checkmark & \checkmark \\ \hline
+        VR & \checkmark & \cross & \cross & \cross \\ \hline
+    \end{tabular}
+    \caption{Übersicht Eigenschaften von Webgrafiktechnologien}
+    \label{table:CompWebtech}
+\end{table}
 \subsection{Frameworks}
 \subsection{Game Engines}

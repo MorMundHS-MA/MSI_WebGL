@@ -4,4 +4,4 @@ services:
     build: .
     volumes: 
       - ./tex/:/sources/
-    command: "latexmk -pvc -outdir=out/ -pdf seminararbeit.tex"
+    command: "latexmk -xelatex -pvc -outdir=out/ seminararbeit.tex"
