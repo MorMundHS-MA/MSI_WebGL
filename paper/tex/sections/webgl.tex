@@ -4,7 +4,7 @@ WebGL basiert auf der OpenGL ES (Embedded Systems) API \cite{parisi2012webgl} ei
 Da es sich bei WebGL somit um eine low-level Grafikapi handelt, ist die Entwicklung von Anwendung direkt in WebGL sehr Zeitaufwendig und setzt fortgeschrittenes Know-how in Grafikprogrammierung voraus. Daher gibt es einige Frameworks und Game Engines die durch Abstraktionen die Entwicklung wesentlich erleichtern \cite{parisi2012webgl}. Eine exemplarische Übersicht über diese wird in den folgenden Kapiteln gezeigt. \\
 Für die Verwendung von WebGL in einer Website wird ein HTML5 canvas Element als Interface zwischen der \ac{DOM} und WebGL benötigt. Von diesem canvas Element kann dann ein WebGL Kontext erzeugt werden \cite{parisi2012webgl}. Dieser Kontext wird dann als Interface für alle folgenden WebGL Operationen verwendet. Konkret würde eine Anwendung 3D Modelle und Texturen laden \bzw erzeugen, diese in Puffer laden um diese dann mithilfe von Shaderprogrammen auf den Canvas Framebuffer zu rendern. 
 \subsection{Vorteile und Nachteile}
-Um die Vor- und Nachteile von WebGL zu erläutern werden wir WebGL mit den Webtechnologien Canvas2D, CSS 3D transform und SVG vergleichen. Durch die grundlegende, im vorrangehenden Kapitel beschriebene, Ähnlichkeit von WebGL und nativen Grafikapis wie OpenGL und DirectX werden diese nicht weiter verglichen.
+Um die Vor- und Nachteile von WebGL zu erläutern, werden wir WebGL mit den Webtechnologien Canvas2D, CSS 3D transform und SVG vergleichen. Durch die grundlegende, im vorrangehenden Kapitel beschriebene Ähnlichkeit von WebGL und nativen Grafikapis, wie OpenGL und DirectX, werden diese nicht weiter verglichen.
 
 \begin{table}[ht]
     \centering
@@ -19,5 +19,12 @@ Um die Vor- und Nachteile von WebGL zu erläutern werden wir WebGL mit den Webte
     \caption{Übersicht Eigenschaften von Webgrafiktechnologien}
     \label{table:CompWebtech}
 \end{table}
+
+\subsubsection*{Canvas2D}
+und WebGL sind sich in der Art der Einbindung in Websites sehr ähnlich. Beide sind als Context eines Canvas HTML5 Elements verfügbar. Wie der Name vermuten lässt ist Canvas2D jedoch auf hardware beschleunigte 2D Grafiken optimiert (Primitive 3D Grafik ist durch softwareseitige Emulation möglich). Dadurch ist es leichter zu verwenden, da der Programmierer sich nicht um low-level Details kümmern muss, sondern direkt 2D Primitive wie Rechtecke, Linien und Kreise zeichnen kann.
+\subsubsection*{CSS3d}
+bezeichnet eine Reihe von Erweiterung von CSS die das manipulieren von \ac{DOM} Objekten im dreidimensionalen Raum erlauben. Ein Beispiel hierfür ist auf \url{https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate3d} verfügbar. Da alle 3D Element Teil der \ac{DOM} sind, ist CSS3D nicht für komplexe Anwendung optimiert. Besonders Updates der 3D Szene mit vielen Änderung würden zu großen Performanceproblemen führen. Der Haupteinsatzzweck für CSS3D ist somit das darstellen von regulären, möglicherweise auch komplexen wie etwa ganze (Sub-)Seiten als 3D Objekt. Beispielhaft hierfür ein 3D Würfel aus Youtube Videos \url{https://threejs.org/examples/#css3d_youtube}.
+\subsubsection*{\ac{SVG}}
+\ac{SVG} wurden ursprünglich als statische vektoralternative für reguläre Bilder verwendet. Durch die Einführung von mächtigerem JavaScript und CSS ist es jedoch heutzutage möglich auch interaktive Grafiken mit SVG darzustellen. Die verbreitete Datenvisualisierungs Bibliothek d3.js nutzt zum Beispiel SVG zur Anzeige der Grafiken. SVG verwendet, ähnlich wie CSS3D, \ac{DOM} Elemente zur Objektdefinition. Daher ergeben sich die gleichen Performanceprobleme bei größeren \bzw sehr dynamischen Grafiken. Jedoch ermöglicht die Integration mit der \ac{DOM} nicht nur eine einfachere Programmierung, sondern auch die Nutzung von CSS als mächtiges Gestaltungswerkzeug.
 \subsection{Frameworks}
 \subsection{Game Engines}
