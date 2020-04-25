@@ -4,10 +4,10 @@ Deshalb werden diese in diesem Abschnitt erklärt.
 Die benötigten Themen wurden in WebGL: up and running \cite[4-9]{parisi2012webgl} passend zu den folgenden Kapiteln gegliedert, deshalb wurde die Struktur dieser Grundlagen an diese angelehnt.
 
 \subsection{3D Koordinatensystem}
-Beim rendern von 2D Elementen wird ein einfach 2D Koordinatensystem verwendet, genauso wie man es aus der Mathematik kennt. Dort gibt es eine x- und eine y-Achse durch welche die Koordinaten der einzelnen Punkte beschrieben werden können.
+Beim Rendern von 2D Elementen wird ein einfach 2D Koordinatensystem verwendet, genauso wie man es aus der Mathematik kennt. Dort gibt es eine x- und eine y-Achse, durch welche die Koordinaten der einzelnen Punkte beschrieben werden können.
 Dabei ist es üblich, dass die x-Achse horizontal liegt und somit bestimmt wie weit Links oder Rechts der Punkt ist. Die y-Achse hingegen bestimmt wie hoch und tief ein Punkt liegt.
 Um nun zum 3D Koordinatensystem zu kommen, wird einfach eine dritte Achse hinzugefügt, die z-Achse. Diese steht beim WebGL Koordinatensystem so gesehen aus dem Bildschirm heraus, das heißt,
- negative Werte geben an wie tief ein Punkt im Bildschirm liegt.\cite[4]{parisi2012webgl} In Abbildung~\ref{fig:3DKoordinatensystem} sieht man exemplarisch ein solches 3D Koordinatensystem.
+ negative Werte geben an wie tief ein Punkt im Bildschirm liegt. \cite[4]{parisi2012webgl} In Abbildung~\ref{fig:3DKoordinatensystem} sieht man exemplarisch ein solches 3D Koordinatensystem.
  \begin{figure}
     \centering
     \includegraphics[width=6cm]{3dkoords.jpg}
@@ -26,28 +26,28 @@ Ein 3D Mesh wird oft auch als Model bezeichnet. \cite[4]{parisi2012webgl}
 Um nun die Oberfläche eines Meshes zu beschreiben, bedarf es mehr als nur den verschiedenen Vektoren.
 Auch hier gibt es verschiedene Arten die Oberfläche zu beschreiben, die einfachste wäre der Oberfläche einfach eine Farbe zuzuweisen.
 Möchte man die Oberflächen nun genauer beschreiben bedarf es deutlich mehr Informationen, zum Beispiel wie Lichter von der Oberfläche reflektiert werden sollen oder ob die Oberfläche leuchten soll und so weiter.
-Außerdem kann man anstatt nur eine Farbe zu definieren auch so genannte Texturen verwenden, dies sind meist Bitmaps welche beschreiben wie ein kleines Stück einer bestimmten Oberfläche aussieht.
-Dieses Stück ist meist so gegeben das es endlos aneinander gehängt werden kann und somit eine beliebig große Fläche füllen kann.
+Außerdem kann man, anstatt nur eine Farbe zu definieren auch so genannte Texturen verwenden, dies sind meist Bitmaps, welche beschreiben wie ein kleines Stück einer bestimmten Oberfläche aussieht.
+Dieses Stück ist meist so gegeben das es endlos aneinandergehängt werden kann und somit eine beliebig große Fläche füllen kann.
 In vielen Bild- und Videobearbeitungsprogrammen werden alle Eigenschaften einer Oberfläche zusammen als Materialien bezeichnet.
-Da viele Eigenschaften eines Material erst bei auftreffen von Licht zum vorschein kommen, benötigen viele Materialien Licht um so auszusehen wie gewollt.\cite[5]{parisi2012webgl} 
+Da viele Eigenschaften eines Material erst bei Auftreffen von Licht zum Vorschein kommen, benötigen viele Materialien Licht umso auszusehen wie gewollt. \cite[5]{parisi2012webgl} 
 %evtl Beispieltextur einfügen und darauf eingehen
 
 \subsection{Transformationen und Matrizen}
-Bei vielen 3D Anwendungen möchte man nun ein Model auch bewegen oder sogar animieren können, dafür gibt in den meisten Programmen Tranformationen.
+Bei vielen 3D Anwendungen möchte man nun ein Model auch bewegen oder sogar animieren können, dafür gibt in den meisten Programmen Transformationen.
 Diese sorgen dafür das man ein ganzes Model als eines bewegen, drehen oder skalieren kann und nicht jedes einzelne Eck nacheinander bewegen muss.
-Diese Transformationen werden durch Matrizen beschrieben, das heißt um eine Drehung zu erhalten wird einfach durch lineare Algebra aus der Matrix und dem Model die neuen Positionen des Models berechnet. \cite[6,7]{parisi2012webgl}
+Diese Transformationen werden durch Matrizen beschrieben, das heißt, um eine Drehung zu erhalten wird einfach durch lineare Algebra aus der Matrix und dem Model die neuen Positionen des Models berechnet. \cite[6,7]{parisi2012webgl}
 
 \subsection{Kameras, Perspektiven, Ansichtsfenster und Projektionen}
-Um eine 3D Szene zu rendern benötigt man eine Perspektive aus der auf die Szene geschaut wird.
-Die meisten 3D Programme verwenden hierfür Kameras, diese können wie ein eigenes Objekt platziert und tranformiert werden.
-Auch hier werden Matrizen verwendet, eine besondere Matrix ist hier die Projektionsmatrix welche dafür sorgt das aus der 3D Szene ein 2D Bild wird.
+Um eine 3D Szene zu rendern benötigt man eine Perspektive, aus der auf die Szene geschaut wird.
+Die meisten 3D Programme verwenden hierfür Kameras, diese können wie ein eigenes Objekt platziert und transformiert werden.
+Auch hier werden Matrizen verwendet, eine besondere Matrix ist hier die Projektionsmatrix, welche dafür sorgt, dass aus der 3D Szene ein 2D Bild wird.
 Hierbei ist das 2D Bild ein bestimmtes Ansichtsfenster der 3D Szene.
-Sowohl hier als auch bei den Tranformationen benötigt man als Nutzer der Programme meist keine Kenntnisse über lineare Algebra sondern kann einfach per Drag und Drop eingestellt werden.\cite[7]{parisi2012webgl}
+Sowohl hier als auch bei den Transformationen benötigt man als Nutzer der Programme meist keine Kenntnisse über lineare Algebra, sondern kann einfach per Drag und Drop eingestellt werden. \cite[7]{parisi2012webgl}
 % evtl beispiel für kamera szene etc.
 
 \subsection{Shader}
 Als letztes gibt es noch Shader, diese definieren wie all die definierten Objekte, Kameras und Lichter miteinander interagieren.
-Ein Shader ist ein kleine Programm was definiert wie alle Pixel der Meshes am Ende im Bild aussehen sollen.
+Ein Shader ist ein kleines Programm, welches definiert wie alle Pixel der Meshes am Ende im Bild aussehen sollen.
 Shader sind darauf ausgelegt von einer \ac{GPU} ausgeführt zu werden.
 Bei anderen Grafikbibliotheken sind Shader optional, bei WebGL jedoch werden immer Shader benötigt und daher eine \ac{GPU} erwartet.
-Auch hier gibt es jedoch einige Erleichterungen, die meisten WebGL Bibliotheken haben standard Shader welche für die meisten Anwendungsfälle mehr als ausreichend sind.\cite[7-9]{parisi2012webgl}
+Auch hier gibt es jedoch einige Erleichterungen, die meisten WebGL Bibliotheken haben Standard Shader welche für die meisten Anwendungsfälle mehr als ausreichend sind. \cite[7-9]{parisi2012webgl}
