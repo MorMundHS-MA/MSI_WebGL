@@ -1,4 +1,7 @@
 \section{Ausblick}
-\subsection{\acl{WebASM}}
 \subsection{WebGPU}
-\subsection{Alternativen}
+Bei WebGPU handelt es sich nicht um einen direkten Nachfolger für WebGL, sondern um eine alternative, unabhängige API \cite{WebGPUIntro}. Das auf OpenGL ES basierend WebGL wird daher weiterhin erweitert, momentan auch durch eine größere Neuerung, das auf OpenGL ES 3.0 basierende WebGL2 \cite{WebGL2}. Daher wird WebGPU keine größere Neuerungen in Sachen Funktionalität bieten sondern, ähnlich wie die Vulkan API dem Entwickler genauere Kontrolle über die verfügbaren Ressourcen zu geben und von Grund auf Multithreading zu erlauben. \\
+Multi-threading im Web erfordert jedoch weitere neue Technologien da JavaScript im Web ausschließlich in einem Thread laufen kann \cite{JSConcurrency}. Daher wird WebGPU wahrscheinlich häufig oder gar ausschließlich Verwendung zusammen mit Service Workern oder \ac{WebASM} finden, da diese Multithreading erlauben.
+Die durch low-level Ansatz von WebGPU möglichen Performancegewinne werden wohl vorallem für Highend Spiele und Computeanwendungen interessant sein. Einfachere Visualisierungen werden womöglich weiterhin WebGL bevorzugen da der zusätzliche Entwicklungsaufwand hier vermutlich nicht die notwendigen Vorteile bringen wird. \\
+Zurzeit befinden sich WebGL2 sowie WebGPU noch in experimentellen Stadien.
+\subsection{\acl{WebASM}}
