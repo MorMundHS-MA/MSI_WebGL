@@ -13,14 +13,17 @@ Um nun zum 3D Koordinatensystem zu kommen, wird einfach eine dritte Achse hinzug
     \includegraphics[width=6cm]{3dkoords.jpg}
     \caption{3D Koordinatensystem \cite{PeterStrohm}} \label{fig:3DKoordinatensystem}
     \end{figure}
-%TODO Bilc ohne maus einfügen
 
 \subsection{Gittergewebe, Polygone und Eckpunkte}
 Es gibt sehr viele verschiedene Arten 3D Grafiken zu zeichnen, am meisten werden dafür so genannte Gittergewebe auch bekannt als Meshes verwendet.
 Ein solches Mesh besteht aus einem oder mehreren Polygonen Formen, meist Dreiecke oder Vierecke. Definiert sind diese Drei- und Vierecke durch drei bzw.
 vier Vektoren wobei jeder Vektor für einen Punkt im 3D Koordinatensystem steht also x, y und z.
-Ein 3D Mesh wird oft auch als Model bezeichnet. \cite[4]{parisi2012webgl}
-%todo Mesh Beispiel einfügen und beschreiben evtl direkt von einem unserer Beispiele
+Ein 3D Mesh wird oft auch als Model bezeichnet, ein Beispiel hierfür ist in Abbildung~\ref{fig:Mesh} zu sehen. \cite[4]{parisi2012webgl}
+\begin{figure}
+    \centering
+    \includegraphics[width=6cm]{Meshes.jpg}
+    \caption{Wireframe von einem Mesh \cite{sketchfab}} \label{fig:Mesh}
+    \end{figure}
 
 \subsection{Materialien, Texturen und Lichter}
 Um nun die Oberfläche eines Meshes zu beschreiben, bedarf es mehr als nur den verschiedenen Vektoren.
